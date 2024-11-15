@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@azure/msal-node": "^2.6.3",
-    "@azure/storage-blob": "^12.16.0",
+    "@azure/storage-blob": "^12.25.0",
     "@hapi/joi": "^17.1.1",
     "@nestjs/cache-manager": "^2.2.0",
     "@nestjs/common": "^9.1.1",
