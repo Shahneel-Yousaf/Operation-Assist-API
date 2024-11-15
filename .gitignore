@@ -4,6 +4,7 @@ database/.cache/
 IAM Key Name        
 Access Key        
 Secret Access Key
+.env.template
 
 # Created by .ignore support plugin (hsz.mobi)
 ### JetBrains template
