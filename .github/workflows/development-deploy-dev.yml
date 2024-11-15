@@ -1,0 +1,26 @@
+on:
+# Remove workflow_dispatch when apply check unit test
+  workflow_dispatch:
+    branches:
+      - develop
+
+name: App service Deploy
+
+jobs:
+  sprint_deploy:
+    name: App service Deploy - development
+    uses: ./.github/workflows/deploy.yml
+    with:
+      environment: development
+      ENV: dev
+      IMAGE_NAME: opeapp-dev-japaneast-webapp
+      RESOURCE_GROUP: opeapp-dev-japaneast
+      KEY_VAULT: opeappdevjapaneastkvapp
+      APP_SERVICE: opeapp-dev-japaneast-webapp
+      DOCKER_FILE: ./Dockerfile
+      SLOT_NAME: preview
+      branch_deploy: refs/heads/develop
+      script_setting_env: ./ops/app_setting_env.sh
+    secrets:
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS_DEV }}
+      REGISTRY_NAME: ${{ secrets.REGISTRY_NAME_DEV }}

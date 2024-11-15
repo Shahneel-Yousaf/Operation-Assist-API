@@ -1,0 +1,22 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "testTimeout": 60000,
+  "moduleNameMapper": {
+    "^@shared(.*)$": "<rootDir>/../src/shared$1",
+    "^@user(.*)$": "<rootDir>/../src/user$1",
+    "^@group(.*)$": "<rootDir>/../src/group$1",
+    "^@user-group-role-template(.*)$": "<rootDir>/../src/user-group-role-template$1",
+    "^@blob-storage(.*)$": "<rootDir>/../src/blob-storage$1",
+    "^@machine(.*)$": "<rootDir>/../src/machine$1",
+    "^@template(.*)$": "<rootDir>/../src/template$1",
+    "^@inspection(.*)$": "<rootDir>/../src/inspection$1",
+    "^@firebase(.*)$": "<rootDir>/../src/firebase$1",
+    "^@graph-api(.*)$": "<rootDir>/../src/graph-api$1"
+  }
+}

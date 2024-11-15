@@ -1,0 +1,136 @@
+{
+  "__comment__": "TODO: Putting the App-User message resource on the BE is a specification that could be problematic in the future, but we are keeping it for now for Sprint 2.",
+  "commonError": "予期しないエラーが発生しました。しばらくしてからアクセスしてください。",
+  "authenticationError": "認証に失敗しました。再度ログインしてください。",
+  "forbiddenError": "アクセス権限がありません。",
+  "group": {
+    "createSuccess": "グループを追加しました。",
+    "existingName": "既に使用されているグループ名です。",
+    "inviteSuccess": "メンバーを追加しました。",
+    "memberRegistered": "既に登録済みのメンバーです。",
+    "invitationAlreadySent": "招待メールを送信しました。",
+    "emailAlreadyInUse": "既に使用されているメールアドレスです。",
+    "existingDelete": "すでに削除済みです。",
+    "deleteSuccess": "グループを削除しました。",
+    "deleteUserSuccess": "メンバーを削除しました。",
+    "updateUserSuccess": "メンバーを編集しました。",
+    "deleteYourself": "自分自身は削除できません。",
+    "addMachineSuccess": "車両を追加しました。",
+    "archiveSuccess": "グループをアーカイブしました。",
+    "unarchiveSuccess": "グループのアーカイブを解除しました。",
+    "existingMachine": "既に登録済みの車両です。",
+    "deleteMachineSuccess": "車両を削除しました。",
+    "editMachineSuccess": "車両を編集しました。",
+    "sameSerialNumberAndModelAndType": "選択されている車両と同じ機種-型式・機番を持っている車両がすでに追加済みです。\u202A{machineName}\u202C"
+  },
+  "machineReportV1": {
+    "report": "\u202A{surname}\u202C \u202A{givenName}\u202Cが車両報告を登録しました",
+    "update": "\u202A{surname}\u202C \u202A{givenName}\u202Cが報告内容を更新しました",
+    "resolve": "\u202A{surname}\u202C \u202A{givenName}\u202Cが報告内容を解決しました"
+  },
+  "machineReport": {
+    "report": "\u202A{surname}\u202C \u202A{givenName}\u202Cが異常/不具合報告を登録しました",
+    "update": "\u202A{surname}\u202C \u202A{givenName}\u202Cが報告内容を更新しました",
+    "resolve": "\u202A{surname}\u202C \u202A{givenName}\u202Cが報告内容を解決しました",
+    "createSuccess": "報告を登録しました。"
+  },
+  "machineReportResponse": {
+    "createSuccess": "状況を更新しました。"
+  },
+  "machineOperationReport": {
+    "createSuccess": "報告を登録しました。"
+  },
+  "inspection": {
+    "inspectionResultHistoryV1": {
+      "register": "\u202A{surname}\u202C \u202A{givenName}\u202Cが\u202A{inspectionFormName}\u202Cを登録しました"
+    },
+    "inspectionResultHistory": {
+      "register": "\u202A{surname}\u202C \u202A{givenName}\u202Cが\u202A{inspectionFormName}\u202Cを点検しました"
+    },
+    "sendSuccess": "点検を送信しました。",
+    "result": {
+      "serviceMeter": "0から999999.9までの有効な数値を入力してください。",
+      "odometer": "0から9999999.9までの有効な数値を入力してください。"
+    }
+  },
+  "duration": {
+    "minute": "{value}分前",
+    "minutes": "{value}分前",
+    "hour": "{value}時間前",
+    "hours": "{value}時間前",
+    "day": "{value}日前",
+    "days": "{value}日前"
+  },
+  "inspectionForm": {
+    "publishSuccess": "点検表を公開しました。",
+    "deleteSuccess": "点検表を削除しました。",
+    "inspectionItemHistoryV1": {
+      "create": "\u202A{surname}\u202C \u202A{givenName}\u202Cが\u202A{inspectionFormName}\u202Cを作成しました",
+      "update": "\u202A{surname}\u202C \u202A{givenName}\u202Cが\u202A{inspectionFormName}\u202Cを更新しました",
+      "delete": "\u202A{surname}\u202C \u202A{givenName}\u202Cが\u202A{inspectionFormName}\u202Cを削除しました"
+    },
+    "inspectionItemHistory": {
+      "create": "\u202A{surname}\u202C \u202A{givenName}\u202Cが\u202A{inspectionFormName}\u202Cを作成しました",
+      "update": "\u202A{surname}\u202C \u202A{givenName}\u202Cが\u202A{inspectionFormName}\u202Cを更新しました",
+      "delete": "\u202A{surname}\u202C \u202A{givenName}\u202Cが\u202A{inspectionFormName}\u202Cを削除しました"
+    },
+    "existingDelete": "すでに削除済みです。"
+  },
+  "firebaseMessages": {
+    "registeredInspection": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202Cさんが\u202A{machineName}\u202Cの\u202A{inspectionName}\u202Cを登録しました"
+    },
+    "registeredReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202Cさんが\u202A{machineName}\u202Cの異常/不具合を報告しました"
+    },
+    "updatedReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202Cさんが\u202A{machineName}\u202Cの異常/不具合の内容を更新しました"
+    },
+    "resolvedReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202Cさんが\u202A{machineName}\u202Cの異常/不具合の内容を解決しました"
+    },
+    "registeredMaintenanceReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202Cさんが\u202A{machineName}\u202Cのメンテナンスを報告しました"
+    }
+  },
+  "user": {
+    "existingDelete": "すでに削除済みです。",
+    "deletedUser": {
+      "surname": "削除された",
+      "givenName": "ユーザー"
+    }
+  },
+  "machine": {
+    "existingDelete": "すでに削除済みです。"
+  },
+  "inspectionPdf": {
+    "groupName": "グループ名",
+    "manufacturer": "メーカー",
+    "machineType": "車両種類",
+    "customerMachineNumber": "お客さま車両番号",
+    "sign": "サイン",
+    "serialNumber": "機番",
+    "modelType": "機種・型式",
+    "inspectionItem": "点検項目",
+    "reporter": "報告者"
+  },
+  "emojiError": "使用できない文字が入力されています。",
+  "fuelMaintenanceReport": {
+    "createSuccess": "報告を登録しました。"
+  },
+  "maintenanceReport": {
+    "createSuccess": "報告を登録しました。",
+    "report": "\u202A{surname}\u202C \u202A{givenName}\u202Cがメンテナンスを登録しました",
+    "workAtPastError": "作業日時には現在時刻よりも前の日時を入力して下さい。"
+  },
+  "reportType": {
+    "inspection": "点検実績",
+    "maintenanceReport": "メンテナンス",
+    "incidentReport": "異常/不具合"
+  }
+}

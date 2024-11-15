@@ -1,0 +1,120 @@
+{
+  "__comment__": "TODO: Putting the App-User message resource on the BE is a specification that could be problematic in the future, but we are keeping it for now for Sprint 2.",
+  "commonError": "غیر متوقع خرابی واقع ہوئی ہے۔ براہ کرم بعد میں دوبارہ کوشش کریں۔",
+  "authenticationError": "تصدیق ناکام ہوگئی۔ براہ کرم دوبارہ لاگ ان کریں۔",
+  "forbiddenError": "آپ کو یہ اختیارحاصل نہیں ہے۔",
+  "group": {
+    "createSuccess": "گروپ کامیابی کے ساتھ شامل کیا گیا۔",
+    "existingName": "گروپ کا نام پہلے سے استعمال میں ہے۔",
+    "inviteSuccess": "کامیابی کے ساتھ شامل کیا گیا۔",
+    "memberRegistered": "یہ رکن پہلے سے رجسٹرڈ ہے۔",
+    "invitationAlreadySent": "دعوت نامہ ای میل بھیج دی گئی ہے۔",
+    "emailAlreadyInUse": "یہ ای میل پتہ پہلے سے استعمال میں ہے۔",
+    "existingDelete": "پہلے ہی حذف کر دیا گیا۔",
+    "deleteSuccess": "کامیابی کے ساتھ حذف کر دیا گیا۔",
+    "deleteUserSuccess": "کامیابی کے ساتھ حذف کر دیا گیا۔",
+    "updateUserSuccess": "کامیابی کے ساتھ ترمیم کی گئی۔",
+    "deleteYourself": "آپ خود کو حذف نہیں کر سکتے۔",
+    "addMachineSuccess": "مشین کامیابی کے ساتھ شامل کی گئی۔",
+    "archiveSuccess": "گروپ کو آرکائیو کر دیا گیا ہے۔",
+    "unarchiveSuccess": "گروپ کو غیر آرکائیو کر دیا گیا ہے۔",
+    "existingMachine": "یہ مشین پہلے سے رجسٹرڈ ہے۔",
+    "deleteMachineSuccess": "کامیابی کے ساتھ حذف کر دیا گیا۔",
+    "editMachineSuccess": "کامیابی کے ساتھ ترمیم کی گئی۔",
+    "sameSerialNumberAndModelAndType": "منتخب کردہ ماڈل ٹائپ اور سیریل نمبر والی ایک مشین پہلے سے موجود  ہے۔ \u202B{machineName}\u202C"
+  },
+  "machineReport": {
+    "report": "\u202B{givenName}\u202C \u202B{surname}\u202C نے غیر معمولی/ناکامی کی رپورٹ درج کی ہے",
+    "update": "\u202B{givenName}\u202C \u202B{surname}\u202C نے مشین رپورٹ اپ ڈیٹ کی ہے",
+    "resolve": "\u202B{givenName}\u202C \u202B{surname}\u202C نے مشین رپورٹ حل کی ہے",
+    "createSuccess": "کامیابی کے ساتھ رجسٹرڈ کیا گیا۔"
+  },
+  "machineReportResponse": {
+    "createSuccess": "- سٹیٹس کامیابی کے ساتھ اپ ڈیٹ ہوگیا ہے"
+  },
+  "machineOperationReport": {
+    "createSuccess": "کامیابی کے ساتھ رجسٹرڈ کیا گیا۔"
+  },
+  "inspection": {
+    "inspectionResultHistoryV1": {
+      "register": "\u202B{givenName}\u202C \u202B{surname}\u202C نے \u202B{inspectionFormName}\u202C معائنہ رجسٹر کیا ہے"
+    },
+    "inspectionResultHistory": {
+      "register": "\u202B{givenName}\u202C \u202B{surname}\u202C نے \u202B{inspectionFormName}\u202C کا معائنہ کیا ہے"
+    },
+    "sendSuccess": "معائنہ کامیابی کے ساتھ بھیجا گیا",
+    "result": {
+      "serviceMeter": "براہ کرم 0 سے 999999.9 تک ایک درست نمبرکا اندراج کریں۔",
+      "odometer": "براہ کرم 0 سے 9999999.9 تک ایک درست نمبرکا اندراج کریں۔"
+    }
+  },
+  "duration": {
+    "minute": "\u202B{value}\u202C منٹ پہلے",
+    "minutes": "\u202B{value}\u202C منٹ پہلے",
+    "hour": "\u202B{value}\u202C گھنٹہ پہلے",
+    "hours": "\u202B{value}\u202C گھنٹے پہلے",
+    "day": "\u202B{value}\u202C دن پہلے",
+    "days": "\u202B{value}\u202C دن پہلے"
+  },
+  "inspectionForm": {
+    "publishSuccess": "کامیابی کے ساتھ شائع کیا گیا۔",
+    "deleteSuccess": "کامیابی کے ساتھ حذف کر دیا گیا۔",
+    "inspectionItemHistoryV1": {
+      "create": "\u202B{givenName}\u202C \u202B{surname}\u202C نے \u202B{inspectionFormName}\u202C معائنہ بنایا ہے",
+      "update": "\u202B{givenName}\u202C \u202B{surname}\u202C نے \u202B{inspectionFormName}\u202C معائنہ اپ ڈیٹ کیا ہے",
+      "delete": "\u202B{givenName}\u202C \u202B{surname}\u202C نے \u202B{inspectionFormName}\u202C معائنہ حذف کیا ہے"
+    },
+    "inspectionItemHistory": {
+      "create": "\u202B{givenName}\u202C \u202B{surname}\u202C نے \u202B{inspectionFormName}\u202C بنایا ہے",
+      "update": "\u202B{givenName}\u202C \u202B{surname}\u202C نے \u202B{inspectionFormName}\u202C معائنہ اپ ڈیٹ کیا ہے",
+      "delete": "\u202B{givenName}\u202C \u202B{surname}\u202C نے \u202B{inspectionFormName}\u202C معائنہ حذف کیا ہے"
+    },
+    "existingDelete": "پہلے ہی حذف کر دیا گیا۔"
+  },
+  "firebaseMessages": {
+    "registeredInspection": {
+      "title": "{groupName}",
+      "body": "\u202B{givenName}\u202C \u202B{surname}\u202C نے \u202B{machineName}\u202C کی \u202B{inspectionName}\u202C رجسٹر کردی ہے"
+    },
+    "registeredReport": {
+      "title": "{groupName}",
+      "body": "\u202B{givenName}\u202C \u202B{surname}\u202C نے \u202B{machineName}\u202C کے لیے ایک غیر معمولی/ناکامی کی اطلاع دی ہے"
+    },
+    "updatedReport": {
+      "title": "{groupName}",
+      "body": "\u202B{givenName}\u202C \u202B{surname}\u202C نے \u202B{machineName}\u202C کی غیر معمولی/ناکامی کواپ ڈیٹ کیا ہے"
+    },
+    "resolvedReport": {
+      "title": "{groupName}",
+      "body": "\u202B{givenName}\u202C \u202B{surname}\u202C نے \u202B{machineName}\u202C کی غیر معمولی/ناکامی کو حل کر دیا ہے"
+    },
+    "registeredMaintenanceReport": {
+      "title": "{groupName}",
+      "body": "\u202B{givenName}\u202C \u202B{surname}\u202C نے \u202B{machineName}\u202C کے لیے دیکھ بھال کی رپورٹ درج کرائی ہے"
+    }
+  },
+  "user": {
+    "existingDelete": "پہلے ہی حذف کر دیا گیا۔",
+    "deletedUser": {
+      "surname": "ڈیلیٹ کر دیا گیا۔",
+      "givenName": "صارف"
+    }
+  },
+  "machine": {
+    "existingDelete": "پہلے ہی حذف کر دیا گیا۔"
+  },
+  "emojiError": "غلط حروف درج کیے گئے ہیں۔",
+  "fuelMaintenanceReport": {
+    "createSuccess": "کامیابی کے ساتھ رجسٹرڈ کیا گیا۔"
+  },
+  "maintenanceReport": {
+    "createSuccess": "کامیابی کے ساتھ رجسٹرڈ کیا گیا۔",
+    "report": "\u202A{surname}\u202C \u202A{givenName}\u202C نے دیکھ بھال کی رپورٹ درج کرائی ہے",
+    "workAtPastError": "کام کی تاریخ اور وقت کے لیے، براہ کرم موجودہ وقت سے پہلے کی تاریخ اور وقت درج کریں۔"
+  },
+  "reportType": {
+    "inspection": "معائنہ کا ریکارڈ",
+    "maintenanceReport": "دیکھ بھال",
+    "incidentReport": "غیر معمولییت/ناکامی"
+  }
+}

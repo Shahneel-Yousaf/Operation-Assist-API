@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-family: 'Noto Sans', sans-serif;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 5px;
+      }
+      th {
+        background-color: #DEDEDE;
+      }
+      .checktitle1 {
+        text-align: right;
+      }
+      .checktitle2 {
+        text-align: left;
+      }
+      .list-title-block {
+        position: relative;
+        width: 154px;
+        text-align: left;
+        font-size: 7px;
+        font-weight: 400;
+      }
+      .titleline {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgb(0, 0, 0);
+        width: 185px;
+        transform: rotate(21.5deg);
+        transform-origin: left;
+      }
+      .check-detail-container {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 400;
+      }
+      .check-detail-block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .time-cell {
+        padding: 0;
+        height: 13px;
+        font-size: 4px;
+        width: 12px;
+        font-weight: 400;
+      }
+      .day-cell {
+        font-size: 6px;
+        text-align: center;
+        padding: 0;
+        height: 12px;
+        font-weight: 400;
+      }
+      .check-detail-row-title {
+        height: 15px;
+        font-size: 12px;
+        text-align: left;
+        background-color: #ffffff;
+      }
+      .check-detail-cell {
+        padding: 1px 0;
+      }
+      .signature-table {
+        width: 150px;
+        margin-top: auto;
+      }
+      .signature-table > tbody > tr .fs-6 {
+        height: 14px;
+        text-align: center;
+        background-color: #DEDEDE;
+        padding: 0;
+      }
+      .signature-table > tbody > tr > td {
+        height: 34px;
+        padding: 0;
+      }
+      .meter {
+        font-size: 6px;
+        writing-mode: tb-rl;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 43px;
+        text-align: center;
+        width: 100%;
+      }
+      .txt-pre {
+        font-size: 6px;
+        white-space: pre;
+        max-height: 43px;
+        text-align: center;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 22.5px;
+        letter-spacing: 0.2px;
+        padding: 0.2px;
+      }
+      .meter-reporter {
+        font-size: 6px;
+        writing-mode: tb-rl;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      #day {
+        height: 40px;
+      }
+      .check-block {
+        font-size: 12px;
+      }
+      .fs-6 {
+        font-size: 6px;
+      }
+      .fs-7 {
+        font-size: 7px;
+      }
+      .fs-14 {
+        font-size: 14px;
+      }
+      .fw-bold {
+        font-weight: 700;
+      }
+      .ml-16 {
+        margin-left: 16px;
+      }
+      .pt-20 {
+        padding-top: 20px;
+      }
+      .pt-10 {
+        padding-top: 10 !important;
+      }
+      .wrapper-name {
+        display: flex;
+        flex: 1;
+      }
+      .col-4 {
+        max-width: 195px;
+      }
+      .pt-0 {
+        padding-top: 0;
+        margin-top: 16px;
+      }
+      .pb-0 {
+        padding-bottom: 0;
+      }
+      .m-20 {
+        margin: 20px;
+      }
+      .mt-10 {
+        margin-top: 10px !important;
+      }
+      .mt-2 {
+        margin-top: 2px;
+      }
+      .mt-5 {
+        margin-top: 3px;
+      }
+      .name {
+        width: 100%;
+        display: flex;
+      }
+      .word-break {
+        word-wrap: break-word;
+        word-break: break-word;
+      }
+      .only-2-line {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        height: 18.5px;
+        white-space: pre-wrap;
+        line-height: 9.1px;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      .height-auto {
+        height: auto !important;
+      }
+      .hidden-cell {
+        border: unset;
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header-inspection-detail" class="p-20 pb-0">
+    </header>
+    <main>
+      <div id="check-inspection-detail" class="p-20 pt-0">
+      </div>
+    </main>
+  </body>

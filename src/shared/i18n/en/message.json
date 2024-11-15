@@ -1,0 +1,136 @@
+{
+  "__comment__": "TODO: Putting the App-User message resource on the BE is a specification that could be problematic in the future, but we are keeping it for now for Sprint 2.",
+  "commonError": "An unexpected error has occurred. Please try again later.",
+  "authenticationError": "Authentication failed. Please log in again.",
+  "forbiddenError": "You do not have access authority.",
+  "group": {
+    "createSuccess": "Added successfully.",
+    "existingName": "The group name is already in use.",
+    "inviteSuccess": "Added successfully.",
+    "memberRegistered": "This member is already registered.",
+    "invitationAlreadySent": "An invitation email has been sent.",
+    "emailAlreadyInUse": "This email address is already in use.",
+    "existingDelete": "Already deleted.",
+    "deleteSuccess": "Deleted successfully.",
+    "deleteUserSuccess": "Deleted successfully.",
+    "updateUserSuccess": "Edited successfully.",
+    "deleteYourself": "You cannot delete yourself.",
+    "addMachineSuccess": "Added machine successfully.",
+    "archiveSuccess": "The group has been archived.",
+    "unarchiveSuccess": "The group has been unarchived.",
+    "existingMachine": "This machine is already registered.",
+    "deleteMachineSuccess": "Deleted successfully.",
+    "editMachineSuccess": "Edited successfully.",
+    "sameSerialNumberAndModelAndType": "A machine that has the same Model-Type and Serial number as the selected machine has already been added. \u202A{machineName}\u202C"
+  },
+  "machineReportV1": {
+    "report": "\u202A{surname}\u202C \u202A{givenName}\u202C has registered a machine report",
+    "update": "\u202A{surname}\u202C \u202A{givenName}\u202C has updated a machine report",
+    "resolve": "\u202A{surname}\u202C \u202A{givenName}\u202C has resolved a machine report"
+  },
+  "machineReport": {
+    "report": "\u202A{surname}\u202C \u202A{givenName}\u202C has registered an abnormality/failure report",
+    "update": "\u202A{surname}\u202C \u202A{givenName}\u202C has updated a machine report",
+    "resolve": "\u202A{surname}\u202C \u202A{givenName}\u202C has resolved a machine report",
+    "createSuccess": "Registered successfully."
+  },
+  "machineReportResponse": {
+    "createSuccess": "Status updated successfully."
+  },
+  "machineOperationReport": {
+    "createSuccess": "Registered successfully."
+  },
+  "inspection": {
+    "inspectionResultHistoryV1": {
+      "register": "\u202A{surname}\u202C \u202A{givenName}\u202C has registered a \u202A{inspectionFormName}\u202C inspection"
+    },
+    "inspectionResultHistory": {
+      "register": "\u202A{surname}\u202C \u202A{givenName}\u202C has inspected \u202A{inspectionFormName}\u202C"
+    },
+    "sendSuccess": "Sent inspection result successfully.",
+    "result": {
+      "serviceMeter": "Please enter a valid number from 0 to 999999.9",
+      "odometer": "Please enter a valid number from 0 to 9999999.9"
+    }
+  },
+  "duration": {
+    "minute": "{value} minute ago",
+    "minutes": "{value} minutes ago",
+    "hour": "{value} hour ago",
+    "hours": "{value} hours ago",
+    "day": "{value} day ago",
+    "days": "{value} days ago"
+  },
+  "inspectionForm": {
+    "publishSuccess": "Published successfully.",
+    "deleteSuccess": "Deleted successfully.",
+    "inspectionItemHistoryV1": {
+      "create": "\u202A{surname}\u202C \u202A{givenName}\u202C has created a \u202A{inspectionFormName}\u202C inspection",
+      "update": "\u202A{surname}\u202C \u202A{givenName}\u202C has updated a \u202A{inspectionFormName}\u202C inspection",
+      "delete": "\u202A{surname}\u202C \u202A{givenName}\u202C has deleted a \u202A{inspectionFormName}\u202C inspection"
+    },
+    "inspectionItemHistory": {
+      "create": "\u202A{surname}\u202C \u202A{givenName}\u202C has created \u202A{inspectionFormName}\u202C",
+      "update": "\u202A{surname}\u202C \u202A{givenName}\u202C has updated a \u202A{inspectionFormName}\u202C inspection",
+      "delete": "\u202A{surname}\u202C \u202A{givenName}\u202C has deleted a \u202A{inspectionFormName}\u202C inspection"
+    },
+    "existingDelete": "Already deleted."
+  },
+  "firebaseMessages": {
+    "registeredInspection": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202C has registered \u202A{inspectionName}\u202C of \u202A{machineName}\u202C"
+    },
+    "registeredReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202C has registered an abnormality/failure report for \u202A{machineName}\u202C"
+    },
+    "updatedReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202C has updated an abnormality/failure report for \u202A{machineName}\u202C"
+    },
+    "resolvedReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202C has resolved an abnormality/failure report for \u202A{machineName}\u202C"
+    },
+    "registeredMaintenanceReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202C has registered maintenance report for \u202A{machineName}\u202C"
+    }
+  },
+  "user": {
+    "existingDelete": "Already deleted.",
+    "deletedUser": {
+      "surname": "Deleted",
+      "givenName": "user"
+    }
+  },
+  "machine": {
+    "existingDelete": "Already deleted."
+  },
+  "inspectionPdf": {
+    "groupName": "Group name",
+    "manufacturer": "Manufacturer",
+    "machineType": "Machine type",
+    "customerMachineNumber": "Customer machine number",
+    "modelType": "Model -Type",
+    "serialNumber": "Serial number",
+    "sign": "Sign",
+    "inspectionItem": "Inspection item",
+    "reporter": "Reporter"
+  },
+  "emojiError": "Invalid characters have been entered.",
+  "fuelMaintenanceReport": {
+    "createSuccess": "Registered successfully."
+  },
+  "maintenanceReport": {
+    "createSuccess": "Registered successfully.",
+    "report": "\u202A{surname}\u202C \u202A{givenName}\u202C has registered a maintenance report",
+    "workAtPastError": "Please enter a date and time earlier than the current time for work date and time."
+  },
+  "reportType": {
+    "inspection": "Inspection record",
+    "maintenanceReport": "Maintenance",
+    "incidentReport": "Abnormality/Failure"
+  }
+}

@@ -1,0 +1,4 @@
+#!/bin/bash
+# Check if the database does not exist then create it
+/opt/mssql-tools/bin/sqlcmd -S $MSSQL_HOST -U sa -P $MSSQL_SA_PASSWORD -d master -Q "IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = '$MSSQL_DB_NAME') CREATE DATABASE [$MSSQL_DB_NAME] COLLATE Latin1_General_100_CI_AS_SC_UTF8;"
+echo "Database $MSSQL_DB_NAME created."

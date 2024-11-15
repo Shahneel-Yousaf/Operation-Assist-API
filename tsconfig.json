@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "paths": {
+      "@shared/*": ["src/shared/*"],
+      "@user/*": ["src/user/*"],
+      "@group/*": ["src/group/*"],
+      "@user-group-role-template/*": ["src/user-group-role-template/*"],
+      "@blob-storage/*": ["src/blob-storage/*"],
+      "@machine/*": ["src/machine/*"],
+      "@machine-report/*": ["src/machine-report/*"],
+      "@template/*": ["src/template/*"],
+      "@inspection/*": ["src/inspection/*"],
+      "@firebase/*": ["src/firebase/*"],
+      "@graph-api/*": ["src/graph-api/*"]
+    }
+  }
+}

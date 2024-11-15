@@ -1,0 +1,120 @@
+{
+  "__comment__": "TODO: Putting the App-User message resource on the BE is a specification that could be problematic in the future, but we are keeping it for now for Sprint 2.",
+  "commonError": "Ha ocurrido un error inesperado. Por favor, inténtelo de nuevo más tarde.",
+  "authenticationError": "Error de autenticación. Por favor inicia sesión nuevamente.",
+  "forbiddenError": "No tienes permiso de acceso.",
+  "group": {
+    "createSuccess": "Gropo agregado exitosamente.",
+    "existingName": "El nombre del grupo ya está en uso.",
+    "inviteSuccess": "Miembro agregado exitosamente.",
+    "memberRegistered": "Este miembro ya está registrado.",
+    "invitationAlreadySent": "Se ha enviado un correo electrónico de invitación.",
+    "emailAlreadyInUse": "La dirección de correo electrónico ya está en uso.",
+    "existingDelete": "Ya ha sido eliminado.",
+    "deleteSuccess": "Grupo eliminado exitosamente.",
+    "deleteUserSuccess": "Miembro eliminado exitosamente.",
+    "updateUserSuccess": "Miembro editado exitosamente.",
+    "deleteYourself": "No puedes eliminarte a ti mismo.",
+    "addMachineSuccess": "Máquina agregada exitosamente.",
+    "archiveSuccess": "Se ha archivado el grupo.",
+    "unarchiveSuccess": "Se ha levantado el archivo del grupo.",
+    "existingMachine": "La máquina ya está registrada.",
+    "deleteMachineSuccess": "Eliminado exitosamente.",
+    "editMachineSuccess": "Editado exitosamente.",
+    "sameSerialNumberAndModelAndType": "La máquina que tiene el mismo modelo-número de serie que la máquina seleccionado ya ha sido agregado. \u202A{machineName}\u202C"
+  },
+  "machineReport": {
+    "report": "\u202A{surname}\u202C \u202A{givenName}\u202C ha registrado un informe de anomalía/falla",
+    "update": "\u202A{surname}\u202C \u202A{givenName}\u202C ha actualizado el reporte de la máquina",
+    "resolve": "\u202A{surname}\u202C \u202A{givenName}\u202C ha resuelto el reporte de la máquina",
+    "createSuccess": "Registrado exitosamente."
+  },
+  "machineReportResponse": {
+    "createSuccess": "Estado actualizado correctamente."
+  },
+  "machineOperationReport": {
+    "createSuccess": "Registrado exitosamente."
+  },
+  "inspection": {
+    "inspectionResultHistoryV1": {
+      "register": "\u202A{surname}\u202C \u202A{givenName}\u202C ha registrado la inspección de \u202A{inspectionFormName}\u202C."
+    },
+    "inspectionResultHistory": {
+      "register": "\u202A{surname}\u202C \u202A{givenName}\u202C ha inspeccionado \u202A{inspectionFormName}\u202C"
+    },
+    "sendSuccess": "Inspección enviada exitosamente.",
+    "result": {
+      "serviceMeter": "Por favor, introduzca un número válido de 0 a 999999.9",
+      "odometer": "Por favor, introduzca un número válido de 0 a 9999999.9"
+    }
+  },
+  "duration": {
+    "minute": "Hace {value} minuto",
+    "minutes": "Hace {value} minutos",
+    "hour": "Hace {value} hora",
+    "hours": "Hace {value} horas",
+    "day": "Hace {value} día",
+    "days": "Hace {value} días"
+  },
+  "inspectionForm": {
+    "publishSuccess": "Publicado exitosamente.",
+    "deleteSuccess": "Eliminado exitosamente.",
+    "inspectionItemHistoryV1": {
+      "create": "\u202A{surname}\u202C \u202A{givenName}\u202C ha creado la inspección de \u202A{inspectionFormName}\u202C",
+      "update": "\u202A{surname}\u202C \u202A{givenName}\u202C ha actualizado la inspección de \u202A{inspectionFormName}\u202C",
+      "delete": "\u202A{surname}\u202C \u202A{givenName}\u202C ha eliminado la inspección de \u202A{inspectionFormName}\u202C"
+    },
+    "inspectionItemHistory": {
+      "create": "\u202A{surname}\u202C \u202A{givenName}\u202C ha creado \u202A{inspectionFormName}\u202C",
+      "update": "\u202A{surname}\u202C \u202A{givenName}\u202C ha actualizado la inspección de \u202A{inspectionFormName}\u202C",
+      "delete": "\u202A{surname}\u202C \u202A{givenName}\u202C ha eliminado la inspección de \u202A{inspectionFormName}\u202C"
+    },
+    "existingDelete": "Ya ha sido eliminado."
+  },
+  "firebaseMessages": {
+    "registeredInspection": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202C ha registrado \u202A{inspectionName}\u202C de \u202A{machineName}\u202C"
+    },
+    "registeredReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202C ha reportado una anormalidad/falla para \u202A{machineName}\u202C"
+    },
+    "updatedReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202C ha actualizado el informe de anomalía/falla para \u202A{machineName}\u202C"
+    },
+    "resolvedReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202C ha resuelto la anomalía/falla para \u202A{machineName}\u202C"
+    },
+    "registeredMaintenanceReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202C ha registrado un informe de mantenimiento para \u202A{machineName}\u202C"
+    }
+  },
+  "user": {
+    "existingDelete": "Ya ha sido eliminado.",
+    "deletedUser": {
+      "surname": "Eliminado",
+      "givenName": "Usuario"
+    }
+  },
+  "machine": {
+    "existingDelete": "Ya ha sido eliminado."
+  },
+  "emojiError": "Se han ingresado caracteres no válidos.",
+  "fuelMaintenanceReport": {
+    "createSuccess": "Registrado exitosamente."
+  },
+  "maintenanceReport": {
+    "createSuccess": "Registrado exitosamente.",
+    "report": "\u202A{surname}\u202C \u202A{givenName}\u202C ha registrado un informe de mantenimiento",
+    "workAtPastError": "Para la fecha y hora de trabajo. Por favor, ingrese una fecha y hora anteriores a la hora actual."
+  },
+  "reportType": {
+    "inspection": "Registro de inspección",
+    "maintenanceReport": "Mantenimiento",
+    "incidentReport": "Anormalía/Falla"
+  }
+}

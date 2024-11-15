@@ -1,0 +1,161 @@
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+      script_setting_env:
+        required: true
+        type: string
+      ENV:
+        required: false
+        type: string
+      IMAGE_NAME:
+        required: true
+        type: string
+      RESOURCE_GROUP:
+        required: true
+        type: string
+      KEY_VAULT:
+        required: true
+        type: string
+      APP_SERVICE:
+        required: true
+        type: string
+      DOCKER_FILE:
+        required: true
+        type: string
+      SLOT_NAME:
+        required: true
+        type: string
+      branch_deploy:
+        required: true
+        type: string
+    secrets:
+      AZURE_CREDENTIALS:
+        required: true
+      REGISTRY_NAME:
+        required: true
+
+name: App service Deploy
+
+env:
+  RESOURCE_GROUP: ${{ inputs.RESOURCE_GROUP }}
+  KEY_VAULT: ${{ inputs.KEY_VAULT }}
+  APP_SERVICE: ${{ inputs.APP_SERVICE }}
+  SLOT_NAME: ${{ inputs.SLOT_NAME }}
+
+jobs:
+  deploy-staging-slot:
+    if: github.ref == ${{ inputs.branch_deploy}} && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    environment:
+      name: ${{ inputs.environment }}
+      url: '${{ steps.deploy-webapp.outputs.webapp-url }}/swagger'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: 'Login via Azure CLI'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          
+      - name: 'Get the public ip of github action'
+        id: prep_ip
+        run: echo ip_public=$(curl http://icanhazip.com/ || curl -s https://checkip.amazonaws.com/) >> $GITHUB_OUTPUT
+  
+      - name: 'Add public ip of github action to key vault'
+        run: |
+          echo "az keyvault network-rule add --name ${{ env.KEY_VAULT }} --ip-address ${{ steps.prep_ip.outputs.ip_public }}"
+          az keyvault network-rule add --name ${{ env.KEY_VAULT }} --ip-address ${{ steps.prep_ip.outputs.ip_public }} --query "[name, properties.provisioningState]"
+
+      - name: Set App Setting ENV - App service
+        run: |
+            bash ${{inputs.script_setting_env}}
+
+      - name: Log in to Azure container registry
+        run: |
+          set -euo pipefail
+          access_token=$(az account get-access-token --query accessToken -o tsv)
+          refresh_token=$(curl https://${{secrets.REGISTRY_NAME}}/oauth2/exchange -v -d "grant_type=access_token&service=${{ secrets.REGISTRY_NAME }}&access_token=$access_token" | jq -r .refresh_token)
+          docker login -u 00000000-0000-0000-0000-000000000000 --password-stdin ${{ secrets.REGISTRY_NAME }} <<< "$refresh_token"
+
+      - name: Prepare
+        id: prep
+        run: |
+          TAG=$(echo $GITHUB_SHA | head -c7)
+          echo "repo_url=${{ secrets.REGISTRY_NAME }}/${{ inputs.IMAGE_NAME }}" >> $GITHUB_OUTPUT
+          echo "tagged_image=${TAG}" >> $GITHUB_OUTPUT
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Cache Docker layers
+        uses: actions/cache@v3
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ${{ inputs.DOCKER_FILE }}
+          push: true
+          tags: "${{ steps.prep.outputs.repo_url }}:${{steps.prep.outputs.tagged_image}}"
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new
+
+      - name: Deploy staging slot app service azure
+        id: deploy-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.APP_SERVICE }}
+          images: "${{ steps.prep.outputs.repo_url }}:${{steps.prep.outputs.tagged_image}}"
+          slot-name: ${{ env.SLOT_NAME }}
+          
+      - name: Move cache
+        run: |
+          rm -rf /tmp/.buildx-cache
+          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+
+      - name: 'Remove public ip of github action from key vault'
+        run: | 
+          echo "az keyvault network-rule remove --name ${{ env.KEY_VAULT }} --ip-address ${{ steps.prep_ip.outputs.ip_public }}"
+          az keyvault network-rule remove --name ${{ env.KEY_VAULT }} --ip-address ${{ steps.prep_ip.outputs.ip_public }} --query "[name, properties.provisioningState]"
+
+      - name: Azure CLI script
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az logout
+            az cache purge
+            az account clear
+
+  swap_slot:
+    needs: deploy-staging-slot
+    runs-on: ubuntu-latest
+    name: Swap slots
+    environment:
+      name: ${{ inputs.environment }}
+      url: 'https://${{ env.APP_SERVICE }}.azurewebsites.net/swagger'
+
+    steps:
+      - name: 'Login via Azure CLI'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Swap slots
+        run: az webapp deployment slot swap -s ${{ env.SLOT_NAME }} -n ${{ env.APP_SERVICE }} -g ${{ env.RESOURCE_GROUP }}
+      
+      - name: Azure CLI script
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az logout
+            az cache purge
+            az account clear

@@ -1,0 +1,120 @@
+{
+  "__comment__": "TODO: Putting the App-User message resource on the BE is a specification that could be problematic in the future, but we are keeping it for now for Sprint 2.",
+  "commonError": "حدث خطأ غير متوقع. الرجاء المحاولة مرة أخرى لاحقًا.",
+  "authenticationError": "فشل التحقق من الصحة. الرجاء تسجيل الدخول مرة أخرى.",
+  "forbiddenError": "ليس لديك صلاحية الوصول.",
+  "group": {
+    "createSuccess": "تم إضافة المجموعة بنجاح.",
+    "existingName": "اسم المجموعة مستخدم بالفعل.",
+    "inviteSuccess": "تمت الإضافة بنجاح.",
+    "memberRegistered": "هذا العضو مسجل بالفعل.",
+    "invitationAlreadySent": "تم إرسال بريد إلكتروني للدعوة.",
+    "emailAlreadyInUse": "هذا العنوان بريد الكتروني مستخدم بالفعل.",
+    "existingDelete": "تم الحذف بالفعل.",
+    "deleteSuccess": "تم الحذف بنجاح.",
+    "deleteUserSuccess": "تم الحذف بنجاح.",
+    "updateUserSuccess": "تم التعديل بنجاح.",
+    "deleteYourself": "لا يمكنك حذف نفسك.",
+    "addMachineSuccess": "تم إضافة الآلة بنجاح.",
+    "archiveSuccess": "تم أرشفة المجموعة.",
+    "unarchiveSuccess": "تم إلغاء أرشفة المجموعة.",
+    "existingMachine": "هذه الآلة مسجلة بالفعل.",
+    "deleteMachineSuccess": "تم الحذف بنجاح.",
+    "editMachineSuccess": "تم التعديل بنجاح.",
+    "sameSerialNumberAndModelAndType": "تمت بالفعل إضافة معدة لها نفس نوع الطراز والرقم التسلسلي مثل المعدة المحدد. {machineName}"
+  },
+  "machineReport": {
+    "report": "\u202A{surname}\u202C \u202A{givenName}\u202C قد قام بتسجيل تقرير العطل/الخلل",
+    "update": "\u202A{surname}\u202C \u202A{givenName}\u202C قام بتحديث تقرير آلة",
+    "resolve": "\u202A{surname}\u202C \u202A{givenName}\u202C قام بحل تقرير آلة",
+    "createSuccess": "تم التسجيل بنجاح."
+  },
+  "machineReportResponse": {
+    "createSuccess": "تم تحديث الحالة بنجاح."
+  },
+  "machineOperationReport": {
+    "createSuccess": "تم التسجيل بنجاح."
+  },
+  "inspection": {
+    "inspectionResultHistoryV1": {
+      "register": "\u202A{surname}\u202C \u202A{givenName}\u202C قام بتسجيل فحص {inspectionFormName}"
+    },
+    "inspectionResultHistory": {
+      "register": "قام \u202A{surname}\u202C \u202A{givenName}\u202C بفحص {inspectionFormName}"
+    },
+    "sendSuccess": "تم إرسال الفحص بنجاح",
+    "result": {
+      "serviceMeter": "يُرجى إدخال رقم صحيح من 0 إلى 999999.9",
+      "odometer": "يُرجى إدخال رقم صحيح من 0 إلى 9999999.9"
+    }
+  },
+  "duration": {
+    "minute": "منذ \u202A{value}\u202C دقائق",
+    "minutes": "منذ \u202A{value}\u202C دقائق",
+    "hour": "منذ \u202A{value}\u202C ساعات",
+    "hours": "منذ \u202A{value}\u202C ساعات",
+    "day": "منذ \u202A{value}\u202C أيام",
+    "days": "منذ \u202A{value}\u202C أيام"
+  },
+  "inspectionForm": {
+    "publishSuccess": "نشر بنجاح.",
+    "deleteSuccess": "تم الحذف بنجاح.",
+    "inspectionItemHistoryV1": {
+      "create": "\u202A{surname}\u202C \u202A{givenName}\u202C قام بإنشاء فحص {inspectionFormName}",
+      "update": "\u202A{surname}\u202C \u202A{givenName}\u202C قام بتحديث فحص {inspectionFormName}",
+      "delete": "\u202A{surname}\u202C \u202A{givenName}\u202C قام بحذف فحص {inspectionFormName}"
+    },
+    "inspectionItemHistory": {
+      "create": "قام \u202A{surname}\u202C \u202A{givenName}\u202C بإنشاء {inspectionFormName}",
+      "update": "\u202A{surname}\u202C \u202A{givenName}\u202C قام بتحديث فحص {inspectionFormName}",
+      "delete": "\u202A{surname}\u202C \u202A{givenName}\u202C قام بحذف فحص {inspectionFormName}"
+    },
+    "existingDelete": "تم الحذف بالفعل."
+  },
+  "firebaseMessages": {
+    "registeredInspection": {
+      "title": "{groupName}",
+      "body": "قام \u202A{surname}\u202C \u202A{givenName}\u202C بتسجيل {inspectionName} لـ {machineName}"
+    },
+    "registeredReport": {
+      "title": "{groupName}",
+      "body": "أبلغ \u202A{surname}\u202C \u202A{givenName}\u202C عن وجود خلل/فشل في {machineName}"
+    },
+    "updatedReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202C قد قام بتحديث تقرير العطل/الخلل لــ {machineName}"
+    },
+    "resolvedReport": {
+      "title": "{groupName}",
+      "body": "\u202A{surname}\u202C \u202A{givenName}\u202C قد قام باصلاح العطل/الخلل لــ {machineName}"
+    },
+    "registeredMaintenanceReport": {
+      "title": "{groupName}",
+      "body": "قام \u202A{surname}\u202C \u202A{givenName}\u202C بتسجيل تقرير صيانة للمُعدة {machineName}"
+    }
+  },
+  "user": {
+    "existingDelete": "تم الحذف بالفعل.",
+    "deletedUser": {
+      "surname": "تم حذف",
+      "givenName": "المستخدم"
+    }
+  },
+  "machine": {
+    "existingDelete": "تم الحذف بالفعل."
+  },
+  "emojiError": "تم إدخال أحرف غير صالحة.",
+  "fuelMaintenanceReport": {
+    "createSuccess": "تم التسجيل بنجاح."
+  },
+  "maintenanceReport": {
+    "createSuccess": "تم التسجيل بنجاح.",
+    "report": "قام \u202A{surname}\u202C \u202A{givenName}\u202C بتسجيل تقرير صيانة",
+    "workAtPastError": "بالنسبة لتاريخ ووقت العمل، يرجى إدخال تاريخ ووقت يسبق الوقت الحالي."
+  },
+  "reportType": {
+    "inspection": "سجلات الفحص",
+    "maintenanceReport": "الصيانة ",
+    "incidentReport": "الأضطرابات / الأعطال"
+  }
+}

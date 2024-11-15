@@ -1,0 +1,58 @@
+name: unit-tests
+on:
+  pull_request:
+    branches:
+      - '**' # Trigger tests for pull requests targeting any branch
+  push:
+    branches:
+      - main # baseline for hotfix or release branches
+      - staging # baseline for main branch
+      - develop # baseline for feature branches
+
+jobs:
+  test_pull_request:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 16
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Create env file for testing
+        run: cp .env.test .env
+
+      - name: Run unit tests
+        run: npm run test:cov
+
+      - name: Make scripts executable
+        run: chmod +x scripts/mssql-scripts
+
+      - name: Build the docker compose stack
+        run: docker compose -f docker-compose.yml up -d mssql
+
+      - name: Check running containers
+        run: docker ps
+
+      - name: Run SQL Scripts in Docker Container
+        run: docker exec testing-database /bin/bash -c "/mssql-scripts"
+
+      - name: Check logs testing-database
+        run: docker logs testing-database
+
+      - name: Run migrations
+        run: npm run migration:run:test
+
+      - name: Run e2e tests
+        run: npm run test:e2e
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
