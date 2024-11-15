@@ -1269,30 +1269,68 @@ export class InspectionService {
         itemCode,
         isoLocaleCode,
       );
-      // Check in case change status to `POSTED`
+      // // Check in case change status to `POSTED`
+      // if (input.currentStatus === InspectionCurrentStatus.POSTED) {
+      //   // When `result` is `ANOMARY` must input machineReport
+      //   if (result === InspectionResultType.ANOMARY && !machineReport) {
+      //     throw new BadRequestException(
+      //       'Input machine report when result have value ANOMARY',
+      //     );
+      //   }
+
+      //   // Must input at least one field of machine report info
+      //   if (
+      //     machineReport &&
+      //     !machineReport.reportComment &&
+      //     !machineReport.machineReportMedias?.length
+      //   ) {
+      //     throw new BadRequestException(
+      //       'The machine report response input must have at least one field.',
+      //     );
+      //   }
+
+      //   // Require result value of each item
+      //   if (!result?.length && inspectionItem.isRequired) {
+      //     throw new BadRequestException(
+      //       'Result must be greater than 1 characters.',
+      //     );
+      //   }
+      // }
+
+      // Inside the POSTED status check for `result`
       if (input.currentStatus === InspectionCurrentStatus.POSTED) {
-        // When `result` is `ANOMARY` must input machineReport
-        if (result === InspectionResultType.ANOMARY && !machineReport) {
-          throw new BadRequestException(
-            'Input machine report when result have value ANOMARY',
-          );
+        // Check for result type "ANOMARY"
+        if (result === InspectionResultType.ANOMARY) {
+          // When result is ANOMARY, either comment or media is required
+          if (
+            !machineReport ||
+            (!machineReport.reportComment &&
+              !machineReport.machineReportMedias?.length)
+          ) {
+            throw new BadRequestException(
+              'For an anomaly result, either a comment or media is required in the machine report.',
+            );
+          }
         }
 
-        // Must input at least one field of machine report info
-        if (
-          machineReport &&
-          !machineReport.reportComment &&
-          !machineReport.machineReportMedias?.length
-        ) {
-          throw new BadRequestException(
-            'The machine report response input must have at least one field.',
-          );
+        // Check for result type "OK"
+        if (result === InspectionResultType.OK) {
+          // When result is OK, machineReport (comments and media) is entirely optional
+          if (
+            machineReport &&
+            !machineReport.reportComment &&
+            !machineReport.machineReportMedias?.length
+          ) {
+            throw new BadRequestException(
+              'If provided, the machine report must have at least one field when the result is OK.',
+            );
+          }
         }
 
-        // Require result value of each item
+        // Require result value of each item if marked as required
         if (!result?.length && inspectionItem.isRequired) {
           throw new BadRequestException(
-            'Result must be greater than 1 characters.',
+            'Result must be greater than 1 character.',
           );
         }
       }
