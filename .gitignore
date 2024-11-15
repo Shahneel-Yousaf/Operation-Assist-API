@@ -1,5 +1,6 @@
 komatsu 
-.cache
+.cache/
+database/.cache/
 IAM Key Name        
 Access Key        
 Secret Access Key
